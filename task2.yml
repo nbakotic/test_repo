@@ -8,9 +8,9 @@ jobs:
 		runs-on: ubuntu-latest
 		steps:
 			- name: Update README
-			  uses: "nbakotic/test_repo"
-			  env:
-			  	GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-			  with: 
-			  	repoTable: "Latest issue closed by ${{ github.actor }}"
+				uses: theboi/github-update-readme@v1.0
+				env:
+			  		GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+				with: 
+					subhead: Latest issue closed by **${{ github.actor }}**".
 	
