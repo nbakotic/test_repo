@@ -1,0 +1,16 @@
+name: task1
+on:
+	issues:
+		types:
+			- closed
+jobs:
+	log_user:
+		runs-on: ubuntu-latest
+		steps:
+			- name: Update README
+			  uses: "namkotic/test_repo"
+			  env:
+			  	GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+			  with: 
+			  	repoTable: "Latest issue closed by ${{ github.actor }}"
+	
