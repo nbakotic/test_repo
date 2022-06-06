@@ -1,16 +1,16 @@
 name: task1
 on:
-	issues:
-		types:
-			- closed
+ issues:
+  types:
+   - closed
 jobs:
-	log_user:
-		runs-on: ubuntu-latest
-		steps:
-			- name: Update README
-				uses: theboi/github-update-readme@v1.0
-				env:
-			  		GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-				with: 
-					subhead: Latest issue closed by **${{ github.actor }}**".
+ log_user:
+  runs-on: ubuntu-latest
+   steps:
+    - name: Update README
+     uses: theboi/github-update-readme@v1.0
+      env:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with: 
+	       header: "Latest issue closed by **${{ github.actor }}**".
 	
