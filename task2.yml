@@ -8,7 +8,7 @@ jobs:
 		runs-on: ubuntu-latest
 		steps:
 			- name: Update README
-			  uses: "namkotic/test_repo"
+			  uses: "nbakotic/test_repo"
 			  env:
 			  	GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 			  with: 
