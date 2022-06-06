@@ -1,0 +1,20 @@
+name: task1
+on:
+	label:
+		types: [created]
+	issues:
+		types: [opened]
+jobs:
+	Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+    	- run: echo "Trigger: ${{ github.event_name }}"
+    	- run: echo "User: ${{ github.actor }}"
+    	- name: Get current time
+  			uses: gerred/actions/current-time@master
+  			id: current-time
+		- name: Use current time
+  			env:
+    		TIME: "${{ steps.current-time.outputs.time }}"
+  		run: echo $TIME
+	
